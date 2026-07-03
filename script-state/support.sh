@@ -1,22 +1,23 @@
 #!/bin/bash
 
 RESOURCE_GROUP_NAME=tfstate-rg
-STAGE_SA_ACCOUNT=tfstateaksdev
-DEV_SA_ACCOUNT=tfdevbackend2026
+STORAGE_ACCOUNT_NAME=tfstateaks2026
 CONTAINER_NAME=tfstate
 
 
 # Create resource group
-az group create --name $RESOURCE_GROUP_NAME --location uksouth
+az group create \
+    --name $RESOURCE_GROUP_NAME \
+    --location uksouth
 
-# Create storage account for prod environment
-az storage account create --resource-group $RESOURCE_GROUP_NAME --name $STAGE_SA_ACCOUNT --sku Standard_LRS --encryption-services blob
+# Create storage account environments
+az storage account create \
+    --resource-group $RESOURCE_GROUP_NAME \
+    --name $STORAGE_ACCOUNT_NAME \
+    --sku Standard_LRS \
+    --encryption-services blob
 
-# Create storage account for dev environment
-az storage account create --resource-group $RESOURCE_GROUP_NAME --name $DEV_SA_ACCOUNT --sku Standard_LRS --encryption-services blob
-
-# Create blob container for prod environment
-az storage container create --name $CONTAINER_NAME --account-name $STAGE_SA_ACCOUNT
-
-# Create blob container for dev environment
-az storage container create --name $CONTAINER_NAME --account-name $DEV_SA_ACCOUNT
+# Create blob containers environments
+az storage container create \
+  --name $CONTAINER_NAME \
+  --account-name $STORAGE_ACCOUNT_NAME
