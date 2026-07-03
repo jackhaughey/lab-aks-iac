@@ -21,24 +21,25 @@ The design follows best practices for environment isolation, module reuse, and c
 
 
 ```
-alab-aks-terraform/
-  modules/
-    resource_group/
-    network/
-    aks/
-    acr/
-    keyvault/
-  envs/
-    dev/
-      main.tf
-      variables.tf
-      terraform.tfvars
-      backend.tfvars
-    prod/
-      main.tf
-      variables.tf
-      terraform.tfvars
-      backend.tfvars
+├── infra
+│   ├── envs
+│   │   ├── dev
+│   │   ├── prod
+│   │   └── zero-trust
+│   └── modules
+│       ├── acr
+│       ├── aks
+│       ├── azure_policy
+│       ├── keyvault
+│       ├── network
+│       ├── network_security
+│       ├── private_dns
+│       ├── private_endpoints
+│       ├── resource_group
+│       └── workload_identity
+├── k8s
+├── k8s-init
+└── terraform-backend-state-store
 ```
 ## Modules
 Each module encapsulates a single Azure resource type:
