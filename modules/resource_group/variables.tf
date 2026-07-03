@@ -1,6 +1,6 @@
 variable "name" {
   type    = string
-  default = dev
+  default = "dev"
 }
 
 variable "location" {
@@ -9,7 +9,5 @@ variable "location" {
 }
 
 variable "tags" {
-  type        = map(string)
-  Environment = "dev"
-  Lab         = "lab_aks"
+  type = map(string)
 }

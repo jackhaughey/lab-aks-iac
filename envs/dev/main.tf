@@ -1,11 +1,5 @@
 terraform {
   required_version = ">= 1.6.0"
-
-  backend "azurerm" {
-    resource_group_name  = "rg-tfstate-aks-lab"
-    storage_account_name = "sttfstateakslab"
-    container_name       = "tfstate"
-  }
 }
 
 provider "azurerm" {
