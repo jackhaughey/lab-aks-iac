@@ -28,8 +28,8 @@ resource "random_string" "suffix" {
 }
 
 module "rg" {
-  source  = "../../modules/resource_group"
-  name    = "rg-${var.env}-aks"
+  source   = "../../modules/resource_group"
+  name     = "rg-${var.env}-aks"
   location = var.location
   tags     = local.tags
 }

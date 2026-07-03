@@ -170,3 +170,19 @@ All infrastructure is built using shared modules:
 
 - Easy to maintain
 
+## Posible next steps
+
+Currently considering extending the lab by adding the following;
+Log Analytics
+
+- Zero Trust Build
+
+- Azure Monitor Container Insights
+
+- Private DNS Zones
+
+- Workload Identity
+
+- Ingress NGINX
+
+- Multiple node pools
