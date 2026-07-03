@@ -73,8 +73,10 @@ tfstate/
     terraform.tfstate
   prod/
     terraform.tfstate
+```
 
 Each environment provides its own backend override file:
+```
 envs/dev/backend.tfvars
 ```
 
