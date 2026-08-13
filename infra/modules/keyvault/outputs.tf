@@ -1,1 +1,0 @@
-output "id" { value = azurerm_key_vault.lab_aks.id }

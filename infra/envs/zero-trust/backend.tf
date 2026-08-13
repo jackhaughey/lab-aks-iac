@@ -1,1 +1,0 @@
-key = "zero-trust/terraform.tfstate"
