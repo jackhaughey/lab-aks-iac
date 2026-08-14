@@ -96,6 +96,24 @@ Each module is environment‑agnostic and reusable.
 
 Terraform is used for stateful, promotion‑friendly deployments.
 
+### Local Environment Files (Not Committed)
+
+This deployment uses local environment-specific files that are **not committed** to the repository:
+
+- `terraform/environments/dev/terraform.tfvars`
+- `terraform/environments/prod/terraform.tfvars`
+
+These files contain sensitive or environment-specific values such as:
+
+- VNet address spaces
+- AKS versions
+- Private IP ranges
+- Resource naming prefixes
+
+They are intentionally excluded from version control using `.gitignore`.  
+Each engineer should create their own `.tfvars` files locally before running Terraform:
+
+
 ### Terraform Environment Structure
 
 ```
