@@ -1,7 +1,6 @@
 name: Terraform Plan
 
 on:
-  on:
   workflow_dispatch:
 
 permissions:
